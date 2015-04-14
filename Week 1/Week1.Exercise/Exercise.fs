@@ -34,16 +34,41 @@
     //If you need examples to test, take a look at the msdn page
 
 
-    //TODO Reimplement List.map -> https://msdn.microsoft.com/en-us/library/ee370378.aspx
+    // Reimplement List.map -> https://msdn.microsoft.com/en-us/library/ee370378.aspx
     // Map takes a function and a list, applies the function to each element in the list, and returns a new list of the results. 
-    let rec mapList mapping list = []
-    //TODO Reimplement List.filter -> https://msdn.microsoft.com/en-us/library/ee370294.aspx
+    let rec mapList mapping list = 
+        match list with
+        | x::xs -> mapping x :: mapList mapping xs
+        | [] -> []
+    
+    // Reimplement List.filter -> https://msdn.microsoft.com/en-us/library/ee370294.aspx
     // Fold takes a function to test each list element (function returns a boolean) and a list. Returns a new list containly only the elements for which the predicate returned true. 
-    let rec filterList predicate list = []
-    //TODO Reimplement List.fold -> https://msdn.microsoft.com/en-us/library/ee353894.aspx
+    let rec filterList predicate list =
+        match list with
+        | x::xs ->
+            if (predicate x) then x :: filterList predicate xs
+            else filterList predicate xs
+        | [] -> []
+
+    // Reimplement List.fold -> https://msdn.microsoft.com/en-us/library/ee353894.aspx
     // Takes a function to update the accumulated values given the input element, the initial value, and the list. returns the final accumulated value
-    let rec foldList folder acc list = []
-    //TODO Reimplement List.reduce
+    let rec foldList folder acc list =
+        match list with
+        | x::xs ->
+            let newAcc = folder acc x
+            foldList folder newAcc xs
+        | [] -> acc
+
+    // Reimplement List.reduce -> https://msdn.microsoft.com/en-us/library/ee370239.aspx
     // Takes a function to update the accumulated values given the input element and the list. returns the final accumulated value
-    //Throws an ArgumentException if the list is empty (Use invalidArg function -> https://msdn.microsoft.com/en-us/library/dd233178.aspx ) 
-    let rec reduceList reducer list = []
+    // Throws an ArgumentException if the list is empty (Use invalidArg function -> https://msdn.microsoft.com/en-us/library/dd233178.aspx ) 
+    let rec reduceList reducer list =
+        match list with
+        | x::xs ->
+            match xs with
+            | y::ys ->
+                let reduced = reducer x y
+                let newList = reduced::ys
+                reduceList reducer newList
+            | [] -> x
+        | [] -> invalidArg "list" "cannot reduce empty list"
