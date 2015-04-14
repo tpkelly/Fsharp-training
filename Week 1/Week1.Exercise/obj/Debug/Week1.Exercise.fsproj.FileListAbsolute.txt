@@ -1,0 +1,7 @@
+C:\Workspaces\FsCourseExercises\Week1\Week1.Exercise\bin\Debug\Week1.Exercise.XML
+C:\Workspaces\FsCourseExercises\Week1\Week1.Exercise\bin\Debug\Week1.Exercise.dll
+C:\Workspaces\FsCourseExercises\Week1\Week1.Exercise\bin\Debug\Week1.Exercise.pdb
+C:\Workspaces\FsCourseExercises\Week1\Week1.Exercise\bin\Debug\FSharp.Core.dll
+C:\Workspaces\FsCourseExercises\Week1\Week1.Exercise\bin\Debug\FSharp.Core.xml
+C:\Workspaces\FsCourseExercises\Week1\Week1.Exercise\obj\Debug\Week1.Exercise.dll
+C:\Workspaces\FsCourseExercises\Week1\Week1.Exercise\obj\Debug\Week1.Exercise.pdb
